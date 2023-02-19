@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    #driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    #url: jdbc:sqlserver://main2.takyt.com:5221;DatabaseName=ServerTo
+    #username: sa
+    #password: LNKyt666888@ln#DBServer.as$zZ%wW
+    #下面是上面的加密，程序打包成JAR，加启动参数，java -jar xx.jar --mpw.key=密钥
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: mpw:B4/6Z96YOugekWJo1CP4KpU14p7PEMhCLJURBPrPdXF/8ybuhx6nX/C2gC5O/5ABNocZ1HI6V/163ZT9bk7Law==
+    username: mpw:jxmorqyKOlTH0Zo6Lfgogg==
+    password: mpw:pf2qTcs20jXZ58NVFFbA1wxzzmIqh1PnbzbOuryQ7RNabvAZVeBDhWA+YrmbZsU1
+
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    #Spring Boot 默认是不注入这些属性值的，需要自己绑定
+    #druid 数据源专有配置
+    initialSize: 5 #初始化大小
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+
+    #配置监控统计拦截的filters，stat:监控统计、slf4j通过log4j：日志记录、wall：防御sql注入
+    #如果允许时报错  java.lang.ClassNotFoundException: org.apache.log4j.Priority
+    #则导入 log4j 依赖即可，Maven 地址：https://mvnrepository.com/artifact/log4j/log4j
+    filters: stat,wall,slf4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #系统默认是在resources目录下的mapper目录来查找xml文件
+  #mapper-locations: class:/mapperxx/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto #全局的id生成策略
+      logic-delete-field: deleted #只要pojo中的实体有deleted属性就会执行逻辑删除，没有则不影响
+      logic-delete-value: 1
+      logic-not-delete-value: 0

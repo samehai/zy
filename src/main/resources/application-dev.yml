@@ -1,0 +1,87 @@
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://main.takyt.com:5221;database=server;TrustServerCertificate=True #9.4.1.jre16以后需要加上;TrustServerCertificate=True
+    username: sa
+    password: TAKyt666888@ln#DBServer.as$zZ%wW
+#    dynamic:
+#      primary: ds1 # 配置默认数据库
+#    ds1:
+#      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#      #    url: jdbc:sqlserver://main.takyt.com:5221;DatabaseName=server;TrustServerCertificate=True  #9.4.1.jre16以后需要加上;TrustServerCertificate=True
+#      url: jdbc:sqlserver://main.takyt.com:5221;database=server;TrustServerCertificate=True #9.4.1.jre16以后需要加上;TrustServerCertificate=True
+#      username: sa
+#      password: TAKyt666888@ln#DBServer.as$zZ%wW
+#    ds2:
+#      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+#      #    url: jdbc:sqlserver://main.takyt.com:5221;DatabaseName=server;TrustServerCertificate=True  #9.4.1.jre16以后需要加上;TrustServerCertificate=True
+#      url: jdbc:sqlserver://main.takyt.com:5221;database=kyt01;TrustServerCertificate=True #9.4.1.jre16以后需要加上;TrustServerCertificate=True
+#      username: sa
+#      password: TAKyt666888@ln#DBServer.as$zZ%wW
+#      driver-class-name: org.postgresql.Driver
+#      #    url: jdbc:sqlserver://main.takyt.com:5221;DatabaseName=server;TrustServerCertificate=True  #9.4.1.jre16以后需要加上;TrustServerCertificate=True
+#      url: jdbc:postgresql://main.takyt.com:5223/zy?user=root&password=Kyt666888@ln.as&ssl=true
+#      username: root
+#      password: Kyt666888@ln.as
+    #type: com.alibaba.druid.pool.DruidDataSource
+
+    #Spring Boot 默认是不注入这些属性值的，需要自己绑定
+    #druid 数据源专有配置
+#    initialSize: 5 #初始化大小
+#    minIdle: 5
+#    maxActive: 20
+#    maxWait: 60000
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: SELECT 1
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+  jpa:
+    hibernate:
+      ddl-auto: none #update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    # Hibernate 原语,方言
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+#  jackson:
+#    #配置监控统计拦截的filters，stat:监控统计、slf4j通过log4j：日志记录、wall：防御sql注入
+#    #如果允许时报错  java.lang.ClassNotFoundException: org.apache.log4j.Priority
+#    #则导入 log4j 依赖即可，Maven 地址：https://mvnrepository.com/artifact/log4j/log4j
+#    filters: stat,wall,slf4j
+#    maxPoolPreparedStatementPerConnectionSize: 20
+#    useGlobalDataSourceStat: true
+#    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+    #
+#    date-format: yyyy-MM-dd'T'hh:mm:ss.SSSZ
+#    time-zone: GMT+8
+#    serialization:
+#      write-dates-as-timestamps: false
+
+#  mvc:
+#    pathmatch:
+#      #springboot2.6.0中将SpringMVC 默认路径匹配策略从AntPathMatcher 更改为PathPatternParser，导致swagger出错，解决办法是切换会原先的AntPathMatcher
+#      matching-strategy: ant_path_matcher
+  #开启热布署
+  devtools:
+    restart:
+      # 热部署生效
+      enabled: true
+      # 设置重启的目录
+      additional-paths: src/main/java
+      # classPath 目录下的WEB-INFO文件夹内容修改不重启
+      additional-exclude: WEB-INF/**
+
+#是否激活 swagger true or false
+swagger:
+  enable: true
+  docket:
+    base-package: io.github.jackson
+
+#logging:
+#  level:
+#    com.ejlchina.searccher: DEBUG
