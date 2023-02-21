@@ -43,7 +43,7 @@ public class BaseEntity {
      */
     @Column
     @CreatedDate
-    private Timestamp cTime;
+    private Timestamp cDateTime;
 
     /**
      * 更改记录人员主键
@@ -57,7 +57,7 @@ public class BaseEntity {
      */
     @Column
     @LastModifiedDate
-    private Timestamp uTime;
+    private Timestamp uDateTime;
 
     /**
      * 删除记录人员主键
@@ -69,5 +69,5 @@ public class BaseEntity {
      * 删除记录日期时间
      */
     @Column
-    private Timestamp dTime;
+    private Timestamp dDateTime;
 }

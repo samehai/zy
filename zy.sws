@@ -4,7 +4,8 @@
 
 <Workspace>
 	<Local Expanded="Yes">
-		<Model Expanded="Yes" ID="{0CD47A61-DF69-4DB0-97BF-46A5BC014CAF}" Name="zy" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="zy/zy.prj"/>
+		<Model Expanded="Yes" ID="{0CD47A61-DF69-4DB0-97BF-46A5BC014CAF}" Loaded="No" Name="zy" Type="{FF4B6538-9856-42CF-B9B9-304ED370CEAA}" URL="zy/zy.prj"/>
+		<Model Expanded="Yes" ID="{607C9711-9651-40FC-92F9-57F758ACB0BE}" Name="oms" Selected="Yes" Type="{CDE44E21-9669-11D1-9914-006097355D9B}" URL="oms.pdm"/>
 	</Local>
 	<BrowserModule Name="Repository"/>
 </Workspace>
