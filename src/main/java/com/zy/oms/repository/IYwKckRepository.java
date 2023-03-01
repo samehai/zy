@@ -15,7 +15,7 @@ import java.util.List;
  * @Created by zhangzhe
  */
 @Repository
-public interface IYwKckRepository extends IBaseRepository<YwKck, Long>
+public interface IYwKckRepository extends IBaseRepository<YwKck, String>
 {
 
     /**

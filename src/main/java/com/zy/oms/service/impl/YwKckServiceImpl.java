@@ -36,10 +36,11 @@ import java.util.stream.Collectors;
  */
 @Service
 public class YwKckServiceImpl implements IYwKckService {
+    private final IYwKckRepository ywKCKRepository;
 
-    @Autowired
-    IYwKckRepository ywKCKRepository;
-
+    public YwKckServiceImpl(IYwKckRepository ywKCKRepository) {
+        this.ywKCKRepository = ywKCKRepository;
+    }
 //    @PersistenceContext
 //    private EntityManager em;
 
