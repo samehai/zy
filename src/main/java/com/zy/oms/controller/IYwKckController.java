@@ -18,7 +18,7 @@ import java.util.List;
  * @author Administrator
  */
 @Api(tags = "商品档案管理api")
-@RequestMapping("/ywkck")
+@RequestMapping("api/v1/ywkck")
 public interface IYwKckController {
     /**
      * 创建商品档案

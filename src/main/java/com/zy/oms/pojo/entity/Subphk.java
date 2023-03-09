@@ -5,7 +5,8 @@ import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.time.LocalDate;
+
 
 @Entity
 @Table(name = "SUBPHK")
@@ -26,16 +27,16 @@ public class Subphk {
     private BigDecimal sl;
 
     @Column(name = "XQ")
-    private Instant xq;
+    private LocalDate xq;
 
     @Column(name = "JHDJ", precision = 18, scale = 8)
     private BigDecimal jhdj;
 
     @Column(name = "SCRQ")
-    private Instant scrq;
+    private LocalDate scrq;
 
     @Column(name = "YHRQ")
-    private Instant yhrq;
+    private LocalDate yhrq;
 
     @Column(name = "SPBZ")
     private Integer spbz;
@@ -125,7 +126,7 @@ public class Subphk {
     private BigDecimal zblastpurchaseprice;
 
     @Column(name = "ZBYHRQ")
-    private Instant zbyhrq;
+    private LocalDate zbyhrq;
 
     @Column(name = "SCDW", length = 100)
     private String scdw;
@@ -204,11 +205,11 @@ public class Subphk {
         this.scdw = scdw;
     }
 
-    public Instant getZbyhrq() {
+    public LocalDate getZbyhrq() {
         return zbyhrq;
     }
 
-    public void setZbyhrq(Instant zbyhrq) {
+    public void setZbyhrq(LocalDate zbyhrq) {
         this.zbyhrq = zbyhrq;
     }
 
@@ -444,19 +445,19 @@ public class Subphk {
         this.spbz = spbz;
     }
 
-    public Instant getYhrq() {
+    public LocalDate getYhrq() {
         return yhrq;
     }
 
-    public void setYhrq(Instant yhrq) {
+    public void setYhrq(LocalDate yhrq) {
         this.yhrq = yhrq;
     }
 
-    public Instant getScrq() {
+    public LocalDate getScrq() {
         return scrq;
     }
 
-    public void setScrq(Instant scrq) {
+    public void setScrq(LocalDate scrq) {
         this.scrq = scrq;
     }
 
@@ -468,11 +469,11 @@ public class Subphk {
         this.jhdj = jhdj;
     }
 
-    public Instant getXq() {
+    public LocalDate getXq() {
         return xq;
     }
 
-    public void setXq(Instant xq) {
+    public void setXq(LocalDate xq) {
         this.xq = xq;
     }
 

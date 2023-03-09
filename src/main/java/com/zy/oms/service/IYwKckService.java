@@ -3,8 +3,6 @@ package com.zy.oms.service;
 //import com.ejlchina.searcher.SearchResult;
 import com.sankuai.meituan.shangou.open.sdk.dto.MedicineInfoDto;
 import com.zy.oms.dto.LbCountSum;
-//import com.zy.oms.vo.Mdkc;
-
 import com.zy.oms.dto.MT.MedicineListDto;
 import com.zy.oms.pojo.entity.YwKck;
 import jakarta.persistence.EntityManager;

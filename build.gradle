@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.0.3'
+	id 'org.springframework.boot' version '3.0.4'
 	id 'io.spring.dependency-management' version '1.1.0'
 	id 'org.hibernate.orm' version '6.1.6.Final'
 	id 'org.graalvm.buildtools.native' version '0.9.18'
@@ -41,6 +41,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-devtools'
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-aop
 	implementation 'org.springframework.boot:spring-boot-starter-aop'
+	implementation 'org.jetbrains:annotations:23.0.0'
 
 	testImplementation 'junit:junit:4.13.1'
 //	implementation 'org.springframework.session:spring-session-data-redis'
@@ -90,6 +91,10 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.graalvm.buildtools/native-gradle-plugin
 	implementation 'org.graalvm.buildtools:native-gradle-plugin:0.9.19'
 
+	// Bean Searcher 核心依赖，任何框架都可使用该依赖
+	implementation 'cn.zhxu:bean-searcher:4.1.0'
+// SpringBoot / Grails 项目直接使用以下依赖，更为方便（只添加这一个依赖即可）
+	implementation 'cn.zhxu:bean-searcher-boot-starter:4.1.0'
 }
 
 tasks.named('test') {

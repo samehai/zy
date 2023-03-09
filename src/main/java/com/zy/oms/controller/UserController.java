@@ -7,7 +7,7 @@ import java.util.*;
 
 
 @RestController
-@RequestMapping(value = "/users")     // 通过这里配置使下面的映射都在/users下
+@RequestMapping(value = "api/v1/users")     // 通过这里配置使下面的映射都在/users下
 public class UserController {
 
     // 创建线程安全的Map，模拟users信息的存储

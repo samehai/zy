@@ -8,4 +8,5 @@ import java.util.Map;
 
 public interface IMTService {
     List<Map<String, Object>> medicineBatchUpdate(HttpServletRequest request);
+
 }

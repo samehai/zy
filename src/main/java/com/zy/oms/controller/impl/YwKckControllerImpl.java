@@ -4,7 +4,9 @@ package com.zy.oms.controller.impl;
 import com.sankuai.meituan.shangou.open.sdk.dto.MedicineInfoDto;
 import com.zy.oms.controller.IYwKckController;
 import com.zy.oms.dto.LbCountSum;
+import com.zy.oms.pojo.entity.Subphk;
 import com.zy.oms.pojo.entity.YwKck;
+import com.zy.oms.service.ISubphkService;
 import com.zy.oms.service.IYwKckService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +16,9 @@ import java.util.List;
 
 @RestController
 public class YwKckControllerImpl implements IYwKckController {
+
+    @Autowired
+    private ISubphkService iSubphkService;
     private final IYwKckService iYwKckService;
 
     public YwKckControllerImpl(IYwKckService iYwKckService) {
@@ -69,6 +74,8 @@ public class YwKckControllerImpl implements IYwKckController {
 
     @Override
     public List<MedicineInfoDto> getOneYwKck(String hh) {
+        List<Subphk> list = iSubphkService.getSubphkByHh("MD008X","13406");
+        System.out.println(list);
         return iYwKckService.getAllByHh(hh);
     }
 

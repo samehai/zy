@@ -5,10 +5,10 @@ import com.zy.oms.service.IOrganizationmaterielinfo;
 import org.springframework.stereotype.Service;
 
 @Service
-public class Organizationmaterielinfo implements IOrganizationmaterielinfo {
+public class OrganizationmaterielinfoImpl implements IOrganizationmaterielinfo {
     private final IOrganizationmaterielinfoRepository organizationmaterielinfoRepository;
 
-    public Organizationmaterielinfo(IOrganizationmaterielinfoRepository organizationmaterielinfoRepository) {
+    public OrganizationmaterielinfoImpl(IOrganizationmaterielinfoRepository organizationmaterielinfoRepository) {
         this.organizationmaterielinfoRepository = organizationmaterielinfoRepository;
     }
 }

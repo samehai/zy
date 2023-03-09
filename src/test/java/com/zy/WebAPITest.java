@@ -1,6 +1,7 @@
 package com.zy;
 
 import com.zy.oms.pojo.entity.YwKck;
+import com.zy.oms.service.ISubphkService;
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -25,10 +26,6 @@ import java.util.HashMap;
 @RunWith(SpringJUnit4ClassRunner.class)
 //@AutoConfigureMockMvc
 class WebAPITest {
-
-    //@Autowired
-    //RestTemplate restTemplate;
-
     @Autowired
     private WebApplicationContext webApplicationContext;
 
@@ -80,5 +77,10 @@ class WebAPITest {
         HashMap<String, Object> ret = restTemplate.postForObject("http://localhost:8080/ywkck",ywKck, HashMap.class); //最后一个参数是http://localhost:8080/ywkck返回的类型
         System.out.println(ret);
         return ret;
+    }
+
+    @Test
+    public void getmdkc(){
+        return ;
     }
 }
