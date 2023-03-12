@@ -52,27 +52,25 @@ dependencies {
 
 	// https://mvnrepository.com/artifact/org.postgresql/postgresql
 	runtimeOnly 'org.postgresql:postgresql'
-	implementation 'org.postgresql:postgresql:42.5.1'
+	implementation 'org.postgresql:postgresql:42.5.4'
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework:spring-webflux'
 	testImplementation 'org.springframework.graphql:spring-graphql-test'
 
 	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-log4j2
-//	implementation 'org.springframework.boot:spring-boot-starter-log4j2'
+//	implementation 'org.springframework.boot:spring-boot-starter-log4j2:3.0.4'
 	// https://mvnrepository.com/artifact/org.slf4j/slf4j-api
-	implementation 'org.slf4j:slf4j-api:2.0.6'
+	//implementation 'org.slf4j:slf4j-api:2.0.6'
 	// https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
-	implementation 'org.apache.logging.log4j:log4j-core:2.19.0'
-	// https://mvnrepository.com/artifact/org.slf4j/slf4j-log4j12
-	testImplementation 'org.slf4j:slf4j-log4j12:2.0.6'
+	//implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-reload4j
+//	testImplementation 'org.slf4j:slf4j-reload4j:2.0.6'
 
 	// https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
 	implementation 'org.apache.commons:commons-lang3:3.12.0'
 	// https://mvnrepository.com/artifact/io.swagger.core.v3/swagger-annotations
 	implementation 'io.swagger.core.v3:swagger-annotations:2.2.7'
-	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
-//	implementation 'io.springfox:springfox-swagger-ui:3.0.0'
 	// https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 	// https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter
@@ -91,10 +89,8 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.graalvm.buildtools/native-gradle-plugin
 	implementation 'org.graalvm.buildtools:native-gradle-plugin:0.9.19'
 
-	// Bean Searcher 核心依赖，任何框架都可使用该依赖
-	implementation 'cn.zhxu:bean-searcher:4.1.0'
-// SpringBoot / Grails 项目直接使用以下依赖，更为方便（只添加这一个依赖即可）
-	implementation 'cn.zhxu:bean-searcher-boot-starter:4.1.0'
+	// SpringBoot / Grails 项目直接使用以下依赖，更为方便（只添加这一个依赖即可）
+	implementation 'cn.zhxu:bean-searcher-boot-starter:4.1.2'
 }
 
 tasks.named('test') {

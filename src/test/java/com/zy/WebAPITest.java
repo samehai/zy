@@ -1,5 +1,7 @@
 package com.zy;
 
+import com.zy.oms.ZyApplication;
+import com.zy.oms.pojo.entity.Subphk;
 import com.zy.oms.pojo.entity.YwKck;
 import com.zy.oms.service.ISubphkService;
 import org.junit.Assert;
@@ -9,6 +11,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.stereotype.Service;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -20,14 +23,19 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.context.WebApplicationContext;
 
-import java.util.HashMap;
+import java.util.HashMap;import java.util.List;
 
-@SpringBootTest
+@SpringBootTest(classes = ZyApplication.class)
+//@SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
 //@AutoConfigureMockMvc
 class WebAPITest {
     @Autowired
     private WebApplicationContext webApplicationContext;
+
+
+    @Autowired(required = false)
+    private ISubphkService iSubphkService;
 
     private MockMvc mockMvc;
 
@@ -81,6 +89,7 @@ class WebAPITest {
 
     @Test
     public void getmdkc(){
-        return ;
+        List<Subphk> list = iSubphkService.getSubphkByHh("MD008X","13406");
+        System.out.println(list);
     }
 }

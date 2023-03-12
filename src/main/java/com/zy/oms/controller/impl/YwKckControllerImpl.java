@@ -17,14 +17,14 @@ import java.util.List;
 @RestController
 public class YwKckControllerImpl implements IYwKckController {
 
-    @Autowired
-    private ISubphkService iSubphkService;
+    //@Autowired
+    private final ISubphkService iSubphkService;
     private final IYwKckService iYwKckService;
 
-    public YwKckControllerImpl(IYwKckService iYwKckService) {
-        this.iYwKckService = iYwKckService;
+    public YwKckControllerImpl(ISubphkService iSubphkService, IYwKckService iYwKckService) {
+    this.iSubphkService=iSubphkService;
+    this.iYwKckService=iYwKckService;
     }
-
     @Override
     public HashMap<String, Object> createYwKck(YwKck ywkck) {
         HashMap<String, Object> stringStringHashMap = new HashMap<>();
