@@ -3,9 +3,9 @@ package com.zy.oms.controller;
 //import com.ejlchina.searcher.SearchResult;
 import com.sankuai.meituan.shangou.open.sdk.dto.MedicineInfoDto;
 import com.zy.oms.dto.LbCountSum;
-import com.zy.oms.dto.MT.MedicineListDto;
 import com.zy.oms.pojo.entity.YwKck;
 //import com.zy.oms.vo.Mdkc;
+import com.zy.oms.utils.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
@@ -57,7 +57,7 @@ public interface IYwKckController {
      */
     @GetMapping("one/{hh}")
     @ApiOperation(value = "通过货号获得商品档案")
-    List<MedicineInfoDto> getOneYwKck(@PathVariable String hh);
+    Result<MedicineInfoDto> getOneYwKck(@PathVariable String hh);
 
     /**
      * 查询所有商品档案，支持分页,例：http://127.0.0.1:8080/ywkck/all?pageNum=5&pageSize=8

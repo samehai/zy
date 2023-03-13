@@ -8,7 +8,7 @@ import com.zy.oms.pojo.entity.Subphk;
 import com.zy.oms.pojo.entity.YwKck;
 import com.zy.oms.service.ISubphkService;
 import com.zy.oms.service.IYwKckService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.zy.oms.utils.Result;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.HashMap;
@@ -73,10 +73,11 @@ public class YwKckControllerImpl implements IYwKckController {
 //    }
 
     @Override
-    public List<MedicineInfoDto> getOneYwKck(String hh) {
+    public Result<MedicineInfoDto> getOneYwKck(String hh) {
         List<Subphk> list = iSubphkService.getSubphkByHh("MD008X","13406");
         System.out.println(list);
-        return iYwKckService.getAllByHh(hh);
+        return Result.success(iYwKckService.getAllByHh(hh));
+        //return iYwKckService.getAllByHh(hh);
     }
 
 //    @Override
